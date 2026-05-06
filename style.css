@@ -313,43 +313,130 @@ h2 {
 
 /* Newsletter */
 .news-section {
-  background: var(--leaf);
-  color: white;
-  text-align: center;
+  background: linear-gradient(135deg, var(--honey) 0%, #a67d3a 100%);
+  padding: 80px 10%;
+  position: relative;
+  overflow: hidden;
 }
+
+.news-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.02) 10px,
+      rgba(255, 255, 255, 0.02) 20px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.02) 10px,
+      rgba(255, 255, 255, 0.02) 20px
+    );
+  pointer-events: none;
+}
+
 .news-card {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  background: rgba(253, 251, 247, 0.98);
+  padding: 60px 50px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 3px solid var(--honey);
 }
+
+.news-card::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--honey),
+    var(--honey) 3px,
+    transparent 3px,
+    transparent 6px
+  );
+  border-radius: 12px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
 .news-card h3 {
   font-family: "Playfair Display";
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 2.8rem;
+  margin: 0 0 15px;
+  color: var(--leaf);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
+
+.news-card > p {
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
 #form-email {
   display: flex;
-  margin-top: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
 }
+
 #form-email input {
   background: transparent;
   border: none;
-  padding: 15px;
+  padding: 16px 0;
   width: 100%;
-  color: white;
+  max-width: 400px;
+  color: var(--ink);
   outline: none;
+  border-bottom: 2px solid var(--honey);
+  font-size: 1rem;
+  font-family: "EB Garamond", serif;
+  text-align: center;
 }
+
 #form-email input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(43, 43, 43, 0.4);
 }
+
 #form-email button {
-  background: transparent;
+  background: var(--honey);
   border: none;
-  color: var(--honey);
+  color: white;
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
-  padding: 0 20px;
+  padding: 16px 32px;
+  margin-top: 20px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+#form-email button:hover {
+  background: #a67d3a;
+  transform: translateY(-2px);
 }
 
 footer {
