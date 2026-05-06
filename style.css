@@ -47,12 +47,6 @@ nav {
   background: rgba(253, 251, 247, 0.9);
   backdrop-filter: blur(10px);
 }
-.nav-brand {
-  font-family: "Playfair Display";
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: var(--honey);
-}
 .nav-toggle {
   display: none;
   width: 40px;
@@ -62,61 +56,47 @@ nav {
   position: relative;
   cursor: pointer;
 }
+
+/* LINEE */
 .nav-toggle span,
 .nav-toggle span::before,
 .nav-toggle span::after {
-  display: block;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
   width: 24px;
   height: 2px;
   background: var(--ink);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
 }
-.nav-toggle span {
-  top: 50%;
-}
+
+/* sopra */
 .nav-toggle span::before {
-  content: "";
-  top: -8px;
+  transform: translate(-50%, -50%) translateY(-7px);
 }
+
+/* sotto */
 .nav-toggle span::after {
-  content: "";
-  top: 8px;
+  transform: translate(-50%, -50%) translateY(7px);
 }
-.nav-links a {
-  text-decoration: none;
-  color: var(--ink);
-  margin-left: 25px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
-.nav-cta {
-  border: 1px solid var(--honey);
-  padding: 8px 15px;
-  border-radius: 2px;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-.nav-links.open {
-  display: flex;
-}
+
+/* OPEN */
 .nav-toggle.open span {
-  transform: translateX(-50%) rotate(45deg);
+  /* La linea centrale ruota di 45° restando al centro */
+  background: transparent; /* Nascondiamo la linea centrale se preferisci una X pulita fatta solo dalle altre due */
 }
+
 .nav-toggle.open span::before {
-  transform: translateX(-50%) rotate(-45deg);
-  top: 0;
+  /* Ruota e azzera il translateY precedente per centrarla */
+  transform: translate(-50%, -50%) rotate(45deg);
 }
+
 .nav-toggle.open span::after {
-  opacity: 0;
+  /* Ruota in senso opposto e azzera il translateY */
+  transform: translate(-50%, -50%) rotate(-45deg);
+  opacity: 1; /* Assicurati che sia visibile */
 }
 
 /* Hero */
@@ -529,16 +509,30 @@ footer {
   }
   .nav-links a {
     margin: 0;
-    padding: 14px 18px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.9);
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(74, 93, 78, 0.08);
     display: block;
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease;
   }
   .nav-links a:hover {
-    background: rgba(178, 141, 66, 0.1);
+    background: rgba(178, 141, 66, 0.08);
+    border-color: rgba(178, 141, 66, 0.24);
+    transform: translateX(2px);
   }
   .nav-cta {
     margin-top: 8px;
+    border-color: var(--honey);
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--ink);
   }
   .hero {
     padding-top: 120px;
