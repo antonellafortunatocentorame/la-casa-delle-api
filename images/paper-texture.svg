@@ -1,0 +1,43 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" />
+    </filter>
+  </defs>
+  <rect width="200" height="200" fill="#fdfbf7"/>
+  
+  <!-- Pattern esagonale sfumato molto leggero -->
+  <g filter="url(#blur)" opacity="0.08">
+    <!-- Righe orizzontali per effetto alveare -->
+    <line x1="0" y1="20" x2="200" y2="20" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="40" x2="200" y2="40" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="60" x2="200" y2="60" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="80" x2="200" y2="80" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="200" y2="100" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="120" x2="200" y2="120" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="140" x2="200" y2="140" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="160" x2="200" y2="160" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="180" x2="200" y2="180" stroke="#2b2b2b" stroke-width="0.5"/>
+    
+    <!-- Linee diagonali per effetto esagonale -->
+    <line x1="0" y1="0" x2="100" y2="100" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="100" y1="0" x2="200" y2="100" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="100" y2="200" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="100" y1="100" x2="200" y2="200" stroke="#2b2b2b" stroke-width="0.5"/>
+    
+    <!-- Linee diagonali inverse -->
+    <line x1="200" y1="0" x2="100" y2="100" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="100" y1="0" x2="0" y2="100" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="200" y1="100" x2="100" y2="200" stroke="#2b2b2b" stroke-width="0.5"/>
+    <line x1="100" y1="100" x2="0" y2="200" stroke="#2b2b2b" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Piccole imperfezioni di carta -->
+  <g opacity="0.04">
+    <circle cx="30" cy="30" r="2" fill="#2b2b2b"/>
+    <circle cx="80" cy="60" r="1.5" fill="#2b2b2b"/>
+    <circle cx="150" cy="90" r="1" fill="#2b2b2b"/>
+    <circle cx="50" cy="140" r="1.5" fill="#2b2b2b"/>
+    <circle cx="170" cy="160" r="1" fill="#2b2b2b"/>
+  </g>
+</svg>
