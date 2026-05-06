@@ -226,6 +226,7 @@ h1 span {
 /* Sezioni Narrazione */
 section {
   padding: 120px 10%;
+  scroll-margin-top: 120px;
 }
 .container-small {
   max-width: 750px;
