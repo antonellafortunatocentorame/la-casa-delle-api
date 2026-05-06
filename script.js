@@ -23,7 +23,31 @@ hovers.forEach((el) => {
 });
 
 // 3. Invio form
-document.getElementById("form-email").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Benvenuta nello sciame!");
-});
+const formEmail = document.getElementById("form-email");
+if (formEmail) {
+  formEmail.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Benvenuta nello sciame!");
+  });
+}
+
+// 4. Menu hamburger mobile
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+const navLinkItems = document.querySelectorAll(".nav-links a");
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    navToggle.classList.toggle("open", isOpen);
+    navToggle.setAttribute("aria-expanded", isOpen.toString());
+  });
+
+  navLinkItems.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
