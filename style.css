@@ -747,9 +747,16 @@ footer {
     padding-top: 120px;
   }
   h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
-  .hero-container,
+  .hero-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  #main-cover {
+    width: 280px;
+  }
   .author-container,
   .reviews-grid {
     grid-template-columns: 1fr;
