@@ -403,7 +403,11 @@ footer {
 
 /* Slide Frasi */
 .slide-section {
-  background: linear-gradient(135deg, var(--bg-warm) 0%, rgba(178, 141, 66, 0.08) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-warm) 0%,
+    rgba(178, 141, 66, 0.08) 100%
+  );
   padding: 120px 10%;
 }
 
