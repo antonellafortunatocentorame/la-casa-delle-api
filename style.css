@@ -401,6 +401,93 @@ footer {
   fill: white;
 }
 
+/* Slide Frasi */
+.slide-section {
+  background: linear-gradient(135deg, var(--bg-warm) 0%, rgba(178, 141, 66, 0.08) 100%);
+  padding: 120px 10%;
+}
+
+.slide-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slides-wrapper {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(74, 93, 78, 0.05),
+    rgba(178, 141, 66, 0.08)
+  );
+  border: 1px solid rgba(178, 141, 66, 0.2);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  text-align: center;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-text {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--leaf);
+  line-height: 1.6;
+  margin: 0;
+  font-family: "EB Garamond", serif;
+}
+
+.slide-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.slide-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--honey);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slide-dot.active {
+  background: var(--honey);
+  width: 32px;
+  border-radius: 6px;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Mobile */
 @media (max-width: 900px) {
   nav {

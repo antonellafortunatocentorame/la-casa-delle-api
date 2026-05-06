@@ -51,3 +51,37 @@ if (navToggle && navLinks) {
     });
   });
 }
+
+// 5. Carosello frasi
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".slide-dot");
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide) => slide.classList.remove("active"));
+  dots.forEach((dot) => dot.classList.remove("active"));
+
+  currentSlide = (index + slides.length) % slides.length;
+
+  if (slides[currentSlide]) {
+    slides[currentSlide].classList.add("active");
+  }
+  if (dots[currentSlide]) {
+    dots[currentSlide].classList.add("active");
+  }
+}
+
+if (slides.length > 0) {
+  showSlide(0);
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", (e) => {
+      const index = parseInt(e.target.dataset.index);
+      showSlide(index);
+    });
+  });
+
+  setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 5000);
+}
